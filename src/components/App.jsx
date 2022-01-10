@@ -1,12 +1,15 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { ResetStyle } from '../styles/reset';
-import { GlobalStyle } from '../styles/style';
-import HabitsPage from './HabitsPage';
+// import UserContext from '../contexts/UserContext';
 import LoginPage from './LoginPage';
 import RegisterPage from './RegisterPage';
+import HabitsPage from './HabitsPage';
+
+import { ResetStyle } from '../styles/reset';
+import { GlobalStyle } from '../styles/style';
 
 export default function App() {
     return (
+        // <UserContext.Provider>
         <BrowserRouter>
             <ResetStyle />
             <GlobalStyle />
@@ -16,5 +19,6 @@ export default function App() {
                 <Route path="/habitos" element={<HabitsPage />} />
             </Routes>
         </BrowserRouter>
+        // </UserContext.Provider>
     )
 }
