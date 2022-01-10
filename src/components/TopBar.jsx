@@ -1,13 +1,17 @@
 import styled from "styled-components";
 import headerlogo from "../assets/header-logo.png";
+import { useContext } from "react";
+import UserContext from "../contexts/UserContext";
 
 export default function TopBar() {
+    const { userImage } = useContext(UserContext);
+
     return (
         <Content>
             <div>
                 <img src={headerlogo} alt="TrackIt" />
             </div>
-            <ProfilePic />
+            <ProfilePic src={userImage} />
         </Content>
     )
 }

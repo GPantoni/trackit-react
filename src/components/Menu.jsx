@@ -1,14 +1,17 @@
 import styled from "styled-components";
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { useNavigate } from "react-router-dom";
 
 export default function Menu() {
+    const navigate = useNavigate();
+
     const percentage = 66;
 
     return (
         <>
             <Content>
-                <button>Hábitos</button>
+                <button onClick={() => navigate("/habitos")}>Hábitos</button>
                 <ProgressButton>
                     <CircularProgressbar
                         value={percentage}
@@ -23,7 +26,7 @@ export default function Menu() {
                         })}
                     />
                 </ProgressButton>
-                <button>Histórico</button>
+                <button onClick={() => navigate("/historico")}>Histórico</button>
             </Content>
         </>
     )

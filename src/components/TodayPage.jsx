@@ -1,11 +1,8 @@
 import styled from "styled-components";
-import axios from "axios";
 import TopBar from "./TopBar";
 import Menu from "./Menu";
 
-export default function HabitsPage() {
-
-
+export default function TodayPage() {
     return (
         <>
             <TopBar />

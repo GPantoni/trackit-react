@@ -20,7 +20,7 @@ export default function RegisterPage() {
     };
 
     const [buttonColor, setButtonColor] = useState('#52B6FF');
-    const [buttonValue, setButtonValue] = useState(<ThreeDots type="ThreeDots" color="#FFFFFF" height={10} width={80} />);
+    const [buttonValue, setButtonValue] = useState('Cadastrar');
     const [disabled, setDisabled] = useState(false);
 
 
@@ -54,7 +54,7 @@ export default function RegisterPage() {
                 <input type="password" name="senha" placeholder="senha" disabled={disabled} required onChange={e => setPassword(e.target.value)} />
                 <input type="text" name="name" placeholder="nome" disabled={disabled} required onChange={e => setName(e.target.value)} />
                 <input type="url" name="foto" placeholder="foto" disabled={disabled} required onChange={e => setImage(e.target.value)} />
-                <Submit type="submit" value={buttonValue} buttonColor={buttonColor} disabled={disabled} />
+                <Submit type="submit" buttonColor={buttonColor} disabled={disabled}> {buttonValue} </Submit>
             </Form>
             <p onClick={() => navigate("/")}>Já tem uma conta? Faça login!</p>
         </ Content>
@@ -100,8 +100,18 @@ const Form = styled.form`
     }
 `
 
-const Submit = styled.input`
+const Submit = styled.button`
+    width: 303px;
+    height: 45px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
     background: ${props => props.buttonColor};
-    border: none;
     color: #FFFFFF;
+    
+    border: none;
+    border-radius: 5px;
+    padding-left: 11px;
 `
